@@ -100,7 +100,7 @@ def restore(workspace_name, saved_programs):
             command = cmdline
 
         # Execute command via i3 exec.
-        i3.command(f'exec "cd \\"{working_directory}\\" && {command}"')
+        i3.command(f'exec "export IBUS_ENABLE_SYNC_MODE=1 && export GTK_IM_MODULE=ibus && export QT_IM_MODULE=ibus && export XMODIFIERS=@im=ibus && export QT4_IM_MODULE=ibus && export CLUTTER_IM_MODULE=ibus && cd \\"{working_directory}\\" && {command}"')
 
 
 def get_programs(workspace, numeric):
